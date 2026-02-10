@@ -23,10 +23,10 @@ else
 	port=$input_port
 fi
 
-echo "Enter server name (e.g., github.com) or press Enter for default (github.com):"
+echo "Enter server name (e.g., apple.com) or press Enter for default (apple.com):"
 read -r input_sn
 if [ -z "$input_sn" ]; then
-	sn="github.com"
+	sn="apple.com"
 	echo "Using default value: $sn"
 else
 	if ! [[ "$input_sn" =~ ^[a-zA-Z0-9][a-zA-Z0-9.-]+[a-zA-Z0-9]$ ]]; then
@@ -40,7 +40,7 @@ valid_fps=("chrome" "firefox" "safari" "ios" "android" "edge" "360" "qq" "random
 echo "Enter fingerprint (chrome, firefox, safari, ios, android, edge, 360, qq, random, randomized) or press Enter for default (safari):"
 read -r input_fp
 if [ -z "$input_fp" ]; then
-	fp="randomized"
+	fp="safari"
 	echo "Using default value: $fp"
 else
 	fp_valid=false
