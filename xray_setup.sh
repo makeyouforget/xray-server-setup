@@ -62,7 +62,7 @@ kp=$(xray x25519)
 pk=$(printf "%s\n" "$kp" | awk -F': ' '/^PrivateKey:/ {print $2}')
 pw=$(printf "%s\n" "$kp" | awk -F': ' '/^Password:/ {print $2}')
 sid=$(openssl rand -hex 8)
-ip=$(curl -4 -s ifconfig.me)
+ip=$(hostname -i)
 
 if [ -f /usr/local/etc/xray/config.json ]; then
 	cp /usr/local/etc/xray/config.json /usr/local/etc/xray/config.json.bak
